@@ -390,6 +390,7 @@ suite('a-scene (without renderer)', function () {
       // Stub renderer.
       sceneEl.renderer = {
         vr: {
+          isPresenting: function () { return true; },
           getDevice: function () { return {isPresenting: false}; },
           setDevice: function () {}
         },
@@ -403,7 +404,7 @@ suite('a-scene (without renderer)', function () {
     });
 
     test('resize renderer when in vr mode in fullscreen presentation (desktop, no headset)', function () {
-      sceneEl.renderer.vr.enabled = true;
+      sceneEl.renderer.vr.enabled = false;
       sceneEl.addState('vr-mode');
       sceneEl.resize();
       assert.ok(setSizeSpy.called);
