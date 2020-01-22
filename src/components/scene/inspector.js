@@ -32,6 +32,7 @@ module.exports.Component = registerComponent('inspector', {
     this.initOverlay();
     window.addEventListener('keydown', this.onKeydown);
     window.addEventListener('message', this.onMessage);
+    window.openInspector = this.openInspector.bind(this)
   },
 
   play: function () {

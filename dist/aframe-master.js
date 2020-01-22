@@ -68369,6 +68369,7 @@ module.exports.Component = registerComponent('inspector', {
     this.initOverlay();
     window.addEventListener('keydown', this.onKeydown);
     window.addEventListener('message', this.onMessage);
+    window.openInspector = this.openInspector.bind(this)
   },
 
   play: function () {
@@ -77112,7 +77113,7 @@ _dereq_('./core/a-mixin');
 _dereq_('./extras/components/');
 _dereq_('./extras/primitives/');
 
-console.log('A-Frame Version: 0.9.2 (Date 2020-01-21, Commit #922ea459)');
+console.log('A-Frame Version: 0.9.2 (Date 2020-01-22, Commit #3ce5449c)');
 console.log('three Version (https://github.com/supermedium/three.js):',
             pkg.dependencies['super-three']);
 console.log('WebVR Polyfill Version:', pkg.dependencies['webvr-polyfill']);
